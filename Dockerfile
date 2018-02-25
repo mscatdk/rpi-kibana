@@ -7,7 +7,7 @@ RUN apk update && \
 
 ENV APP_USER=kibana
 ENV APP_HOME=/usr/share/kibana
-ENV APP_VERSION=5.6.8
+ENV APP_VERSION=6.2.2
 
 RUN addgroup -S ${APP_USER} && adduser -S -D -g '' -s /bin/bash -G ${APP_USER} ${APP_USER}
 
