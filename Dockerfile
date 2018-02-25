@@ -7,11 +7,11 @@ RUN apk update && \
 
 ENV APP_USER=kibana
 ENV APP_HOME=/usr/share/kibana
-ENV APP_VERSION=4.6.6
+ENV APP_VERSION=5.6.8
 
 RUN addgroup -S ${APP_USER} && adduser -S -D -g '' -s /bin/bash -G ${APP_USER} ${APP_USER}
 
-RUN wget "https://download.elastic.co/kibana/kibana/kibana-${APP_VERSION}-linux-x86_64.tar.gz" -O /tmp/kibana.tar.gz && \
+RUN wget "https://artifacts.elastic.co/downloads/kibana/kibana-${APP_VERSION}-linux-x86_64.tar.gz" -O /tmp/kibana.tar.gz && \
     tar -xvzf /tmp/kibana.tar.gz && \
     mv kibana-${APP_VERSION}-linux-x86_64 /usr/share/kibana && \
     rm -f /tmp/kibana.tar.gz
